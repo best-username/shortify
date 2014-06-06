@@ -1,0 +1,53 @@
+AddDefaultCharset UTF-8
+
+php_flag magic_quotes_gpc off
+php_flag register_globals off
+php_flag display_errors off
+
+ErrorDocument 403 /index.php?page=error404
+ErrorDocument 404 /index.php?page=error404
+ErrorDocument 500 /index.php?page=error404
+
+Options -Indexes
+
+php_value max_input_time 600
+php_value upload_max_filesize 15M
+php_value post_max_size 30M
+php_value memory_limit 1400M
+
+php_value session.use_trans_sid 0
+php_value session.session.use_only_cookies 1
+
+RewriteEngine On
+
+# перенаправляем файл htc
+RewriteRule ^PIE.htc$ /css/PIE.htc [NC,L]
+
+RewriteRule ^shops/50.html  /latex/Magazin_zdorovogo_sna_"Geveya".html [NC,L]
+RewriteRule ^news/?  /intresting/ [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^bez-posrednik\.com
+RewriteRule ^(.*)$ http://www.bez-posrednik.com/$1 [R=301,L]
+
+# не позволять httpd отдавать файлы, начинающиеся с точки (.htaccess, .svn, .git и прочие)
+RedirectMatch 403 /\..*$
+
+RewriteCond %{REQUEST_URI} /gii/ [OR]
+RewriteCond %{REQUEST_URI} /backend/
+RewriteRule .* index.php [NC,L]
+
+# если директория или файл существуют, использовать их напрямую
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# иначе отправлять запрос на файл index.php
+RewriteRule .* index.php
+
+
+
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType text/html "now"
+	ExpiresByType image/png "access plus 10 days"
+	ExpiresByType image/jpeg "access plus 3 day"
+	ExpiresByType image/gif "access plus 3 day"
+</IfModule>

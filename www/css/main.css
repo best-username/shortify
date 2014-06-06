@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+	min-width: 960px !important;
+}
+
+.mgtop15 {
+	margin-top: 15px;
+}
+
+.mgtop10 {
+	margin-top: 10px;
+}
+
+.page-wrapper {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -100px; 
+}
+
+.page-wrapper > .container-fluid {
+    padding-top: 60px;
+}
+
+.page-wrapper:after {
+    content: "";
+    display: block;
+}
+.b-footer, .page-wrapper:after {
+    height: 100px; 
+}
+
+.b-footer {
+	color: #fff;
+	background: #37464f;	
+}
+
+.b-footer > div.container {
+    padding: 20px 20px 0 20px;
+}
+
+.navbar-fixed-top {
+    border-bottom: 5px solid #FF9600;
+    min-width: 960px !important;
+}
+
+.page-wrapper > .container {
+	padding: 25px 0;
+}
+
+
+.login-form {
+    width: 350px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.login-form form {
+    margin: 0;
+}
+
+.login-form form .form-actions {
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.login-form form .help-block {
+    display: none;
+}
+
+.grid-view .summary {
+	padding-top: 10px;
+}
+
+.pagination {
+	margin: 0;
+}
+
+.gray-grad {
+    background-image: linear-gradient(bottom, rgb(245,245,245) 17%, rgb(255,255,255) 62%);
+    background-image: -o-linear-gradient(bottom, rgb(245,245,245) 17%, rgb(255,255,255) 62%);
+    background-image: -moz-linear-gradient(bottom, rgb(245,245,245) 17%, rgb(255,255,255) 62%);
+    background-image: -webkit-linear-gradient(bottom, rgb(245,245,245) 17%, rgb(255,255,255) 62%);
+    background-image: -ms-linear-gradient(bottom, rgb(245,245,245) 17%, rgb(255,255,255) 62%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0.17, rgb(245,245,245)),
+            color-stop(0.62, rgb(255,255,255))
+    );    
+}
+
+.nav-tabs > li > a {
+	outline: 0;
+}
+
+.has-switch > div {
+	width: 151%;
+}
+
+
+/*********************************
+* GRID VIEW
+*********************************/
+thead th {
+	background: #f9f9f9;
+
+}
+.grid-view .table th > .sort-link {
+	font-size: 13px;
+}
+
+.grid-view .table .button-column {
+	text-align: center;
+}
+
+.grid-view.grid-view-loading {
+	background: none;
+}
+
+.grid-view.grid-view-loading .table {
+	opacity: 0.5;
+	background: url(/images/preloader.gif) center center no-repeat;
+}
+
+.help-inline.no-input {
+    padding-top: 5px;
+}
