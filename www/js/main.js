@@ -16,7 +16,7 @@ var main = {
             success: function(data) {                
                 if(data.is_success) {
                     var short_url = data.hostname + '/' + data.hash;
-                    var msg = 'Короткиу урл: <a href="' + short_url + '" target="_blank">' + short_url + '</a>';
+                    var msg = 'Короткий урл: <a href="' + short_url + '" target="_blank">' + short_url + '</a>';
                     $('#msg').html(msg).show();
                 }
                 $('#generate-btn').button('reset');
